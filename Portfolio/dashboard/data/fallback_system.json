@@ -1,0 +1,43 @@
+{
+  "system": {
+    "hostname": "dev-workstation",
+    "os_name": "Linux / Ubuntu 24.04 LTS",
+    "os_release": "6.8.0-40-generic",
+    "architecture": "x86_64",
+    "processor": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "python_version": "3.12.3"
+  },
+  "uptime": {
+    "seconds": 1221492.0,
+    "formatted": "14d 3h 42m"
+  },
+  "cpu": {
+    "usage_percent": 18.4,
+    "per_core_percent": [15.2, 22.0, 18.5, 24.1, 14.0, 19.8, 16.3, 17.5, 12.1, 25.4, 18.9, 21.0, 14.5, 20.2, 17.1, 18.0],
+    "logical_cores": 16,
+    "physical_cores": 8,
+    "current_frequency_mhz": 3200.0
+  },
+  "memory": {
+    "total_gb": 15.89,
+    "used_gb": 5.2,
+    "available_gb": 9.8,
+    "usage_percent": 32.7,
+    "swap_total_gb": 4.0,
+    "swap_used_gb": 0.0,
+    "swap_percent": 0.0
+  },
+  "disk": {
+    "mount_point": "/",
+    "total_gb": 468.0,
+    "used_gb": 142.0,
+    "free_gb": 303.0,
+    "usage_percent": 32.0
+  },
+  "network": {
+    "bytes_sent_mb": 1420.5,
+    "bytes_recv_mb": 4980.2
+  },
+  "timestamp": "2026-11-21T14:30:00Z",
+  "status": "HEALTHY"
+}

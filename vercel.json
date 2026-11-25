@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/Portfolio/dashboard/index.html" },
+    { "source": "/style.css", "destination": "/Portfolio/dashboard/style.css" },
+    { "source": "/script.js", "destination": "/Portfolio/dashboard/script.js" },
+    { "source": "/data/:path*", "destination": "/Portfolio/dashboard/data/:path*" },
+    { "source": "/api/stats", "destination": "/API/stats_summary.json" },
+    { "source": "/api/system", "destination": "/API/system_stats.json" }
+  ]
+}

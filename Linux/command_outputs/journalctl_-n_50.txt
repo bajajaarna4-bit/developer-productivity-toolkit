@@ -1,0 +1,50 @@
+Nov 21 14:00:01 dev-workstation CRON[12480]: (devops) CMD (/home/devops/DeveloperPortfolio/ShellScripts/resource_monitor.sh)
+Nov 21 14:00:02 dev-workstation systemd[1]: Started Daily apt upgrade and clean activities.
+Nov 21 14:00:03 dev-workstation systemd[1]: apt-daily-upgrade.service: Deactivated successfully.
+Nov 21 14:05:12 dev-workstation NetworkManager[654]: <info>  [1732194312.412] dhcp4 (enp3s0): state changed new lease, address=192.168.1.105
+Nov 21 14:05:12 dev-workstation systemd-resolved[612]: Using degraded feature set UDP instead of TCP for DNS server 192.168.1.1.
+Nov 21 14:10:00 dev-workstation CRON[12590]: (root) CMD (/usr/lib/x86_64-linux-gnu/sa/sa1 1 1)
+Nov 21 14:12:30 dev-workstation kernel: [1221492.412091] usb 1-1.3: new high-speed USB device number 6 using xhci_hcd
+Nov 21 14:12:30 dev-workstation kernel: [1221492.519012] usb 1-1.3: New USB device found, idVendor=046d, idProduct=c52b, bcdDevice=24.11
+Nov 21 14:12:30 dev-workstation kernel: [1221492.519018] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+Nov 21 14:12:30 dev-workstation kernel: [1221492.519021] usb 1-1.3: Product: USB Receiver
+Nov 21 14:12:30 dev-workstation kernel: [1221492.519024] usb 1-1.3: Manufacturer: Logitech
+Nov 21 14:12:30 dev-workstation mtp-probe[12650]: checking bus 1, device 6: "/sys/devices/pci0000:00/0000:00:08.1/0000:04:00.3/usb1/1-1/1-1.3"
+Nov 21 14:12:30 dev-workstation mtp-probe[12650]: bus: 1, device: 6 was not an MTP device
+Nov 21 14:15:01 dev-workstation CRON[12720]: (devops) CMD (/home/devops/DeveloperPortfolio/ShellScripts/resource_monitor.sh)
+Nov 21 14:15:02 dev-workstation systemd[1]: Starting Rotate log files...
+Nov 21 14:15:02 dev-workstation systemd[1]: logrotate.service: Deactivated successfully.
+Nov 21 14:15:02 dev-workstation systemd[1]: Finished Rotate log files.
+Nov 21 14:20:00 dev-workstation systemd[1]: Starting Cleanup of Temporary Directories...
+Nov 21 14:20:00 dev-workstation systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+Nov 21 14:20:00 dev-workstation systemd[1]: Finished Cleanup of Temporary Directories.
+Nov 21 14:22:15 dev-workstation sshd[12890]: Server listening on 0.0.0.0 port 22.
+Nov 21 14:22:15 dev-workstation sshd[12890]: Server listening on :: port 22.
+Nov 21 14:24:01 dev-workstation systemd[1]: Starting Daily man-db regeneration...
+Nov 21 14:24:03 dev-workstation systemd[1]: man-db.service: Deactivated successfully.
+Nov 21 14:24:03 dev-workstation systemd[1]: Finished Daily man-db regeneration.
+Nov 21 14:25:00 dev-workstation CRON[13010]: (root) CMD (/usr/lib/x86_64-linux-gnu/sa/sa1 1 1)
+Nov 21 14:25:40 dev-workstation dockerd[982]: time="2026-11-21T14:25:40.890124115Z" level=info msg="daemon configured with 0 storage driver options"
+Nov 21 14:25:40 dev-workstation dockerd[982]: time="2026-11-21T14:25:40.892401872Z" level=info msg="Loading containers: start."
+Nov 21 14:25:41 dev-workstation dockerd[982]: time="2026-11-21T14:25:41.012498112Z" level=info msg="Loading containers: done."
+Nov 21 14:25:41 dev-workstation dockerd[982]: time="2026-11-21T14:25:41.045129031Z" level=info msg="Docker daemon is ready"
+Nov 21 14:26:01 dev-workstation systemd[1]: Starting Disk Space Monitoring Service...
+Nov 21 14:26:01 dev-workstation systemd[1]: disk-check.service: Deactivated successfully.
+Nov 21 14:26:50 dev-workstation sudo[13150]:   devops : TTY=pts/0 ; PWD=/home/devops/DeveloperPortfolio ; USER=root ; COMMAND=/usr/bin/journalctl -n 50
+Nov 21 14:26:50 dev-workstation sudo[13150]: pam_unix(sudo:session): session opened for user root(uid=0) by devops(uid=1000)
+Nov 21 14:26:50 dev-workstation sudo[13150]: pam_unix(sudo:session): session closed for user root(uid=0)
+Nov 21 14:27:10 dev-workstation kernel: [1222372.102914] audit: type=1107 audit(1732194430.102:49): pid=612 uid=103 auid=4294967295 ses=4294967295 msg='apparmor="ALLOWED" operation="dbus_method_call" bus="system" path="/org/freedesktop/systemd1" interface="org.freedesktop.systemd1.Manager" member="GetUnit" mask="send" name="org.freedesktop.systemd1" pid=13210 label="unconfined" peer_pid=1 peer_label="unconfined"'
+Nov 21 14:27:15 dev-workstation systemd[1]: Created slice User Slice of UID 1000.
+Nov 21 14:27:15 dev-workstation systemd[1]: Starting User Runtime Directory /run/user/1000...
+Nov 21 14:27:15 dev-workstation systemd[1]: Finished User Runtime Directory /run/user/1000.
+Nov 21 14:27:15 dev-workstation systemd[1]: Starting User Manager for UID 1000...
+Nov 21 14:27:16 dev-workstation systemd[13240]: Queued start job for default target Main User Target.
+Nov 21 14:27:16 dev-workstation systemd[13240]: Reached target Paths.
+Nov 21 14:27:16 dev-workstation systemd[13240]: Reached target Timers.
+Nov 21 14:27:16 dev-workstation systemd[13240]: Reached target Sockets.
+Nov 21 14:27:16 dev-workstation systemd[13240]: Reached target Basic System.
+Nov 21 14:27:16 dev-workstation systemd[1]: Started User Manager for UID 1000.
+Nov 21 14:27:16 dev-workstation systemd[1]: Started Session 3 of User devops.
+Nov 21 14:28:01 dev-workstation CRON[13300]: (devops) CMD (/home/devops/DeveloperPortfolio/ShellScripts/resource_monitor.sh)
+Nov 21 14:28:02 dev-workstation systemd[1]: systemd-hostnamed.service: Deactivated successfully.
+Nov 21 14:28:10 dev-workstation audit[13380]: USER_CMD pid=13380 uid=1000 auid=1000 ses=3 msg='cwd="/home/devops/DeveloperPortfolio" cmd="journalctl -n 50" terminal=pts/0 res=success'

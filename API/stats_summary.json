@@ -1,0 +1,87 @@
+{
+  "username": "bajajaarna4-bit",
+  "name": "DevOps Engineer & Full-Stack Architect",
+  "avatar_url": "https://avatars.githubusercontent.com/u/583231?v=4",
+  "bio": "Building resilient systems, developer tools, and high-performance applications.",
+  "public_repos": 14,
+  "followers": 48,
+  "following": 32,
+  "total_stars": 141,
+  "total_forks": 28,
+  "total_open_issues": 3,
+  "top_languages": [
+    {
+      "name": "Shell",
+      "count": 1,
+      "percentage": 20.0
+    },
+    {
+      "name": "HCL",
+      "count": 1,
+      "percentage": 20.0
+    },
+    {
+      "name": "Python",
+      "count": 1,
+      "percentage": 20.0
+    },
+    {
+      "name": "Go",
+      "count": 1,
+      "percentage": 20.0
+    },
+    {
+      "name": "JavaScript",
+      "count": 1,
+      "percentage": 20.0
+    }
+  ],
+  "recent_repositories": [
+    {
+      "name": "DeveloperPortfolio",
+      "description": "Developer Productivity & System Monitoring Toolkit with glassmorphism dashboard.",
+      "html_url": "https://github.com/bajajaarna4-bit/DeveloperPortfolio",
+      "language": "Shell",
+      "stars": 38,
+      "forks": 9,
+      "updated_at": "2026-11-21T16:56:31Z"
+    },
+    {
+      "name": "cloud-infrastructure-iac",
+      "description": "Production Terraform & Kubernetes deployment templates for distributed microservices.",
+      "html_url": "https://github.com/bajajaarna4-bit/cloud-infrastructure-iac",
+      "language": "HCL",
+      "stars": 24,
+      "forks": 5,
+      "updated_at": "2026-11-18T16:20:00Z"
+    },
+    {
+      "name": "kernel-metric-exporter",
+      "description": "High-throughput eBPF and sysfs system telemetry daemon in Python & C.",
+      "html_url": "https://github.com/bajajaarna4-bit/kernel-metric-exporter",
+      "language": "Python",
+      "stars": 19,
+      "forks": 3,
+      "updated_at": "2026-11-15T11:45:00Z"
+    },
+    {
+      "name": "distributed-kv-store",
+      "description": "Raft-consensus key-value store with continuous replication and WAL logging.",
+      "html_url": "https://github.com/bajajaarna4-bit/distributed-kv-store",
+      "language": "Go",
+      "stars": 31,
+      "forks": 7,
+      "updated_at": "2026-11-10T14:10:00Z"
+    },
+    {
+      "name": "glassmorphic-dashboard-ui",
+      "description": "Interactive 60fps dark space UI control panel with particle canvas and SVG gauges.",
+      "html_url": "https://github.com/bajajaarna4-bit/glassmorphic-dashboard-ui",
+      "language": "JavaScript",
+      "stars": 29,
+      "forks": 4,
+      "updated_at": "2026-11-05T08:00:00Z"
+    }
+  ],
+  "last_updated": "2026-11-21T16:59:33Z"
+}

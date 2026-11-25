@@ -1,0 +1,77 @@
+{
+  "profile": {
+    "login": "bajajaarna4-bit",
+    "id": 14285700,
+    "name": "DevOps Engineer & Full-Stack Architect",
+    "avatar_url": "https://avatars.githubusercontent.com/u/583231?v=4",
+    "bio": "Building resilient systems, developer tools, and high-performance applications.",
+    "public_repos": 14,
+    "public_gists": 3,
+    "followers": 48,
+    "following": 32,
+    "created_at": "2023-01-15T09:30:00Z",
+    "updated_at": "2026-11-21T16:56:31Z"
+  },
+  "repositories": [
+    {
+      "name": "DeveloperPortfolio",
+      "full_name": "bajajaarna4-bit/DeveloperPortfolio",
+      "html_url": "https://github.com/bajajaarna4-bit/DeveloperPortfolio",
+      "description": "Developer Productivity & System Monitoring Toolkit with glassmorphism dashboard.",
+      "fork": false,
+      "stargazers_count": 38,
+      "forks_count": 9,
+      "open_issues_count": 0,
+      "language": "Shell",
+      "updated_at": "2026-11-21T16:56:31Z"
+    },
+    {
+      "name": "cloud-infrastructure-iac",
+      "full_name": "bajajaarna4-bit/cloud-infrastructure-iac",
+      "html_url": "https://github.com/bajajaarna4-bit/cloud-infrastructure-iac",
+      "description": "Production Terraform & Kubernetes deployment templates for distributed microservices.",
+      "fork": false,
+      "stargazers_count": 24,
+      "forks_count": 5,
+      "open_issues_count": 1,
+      "language": "HCL",
+      "updated_at": "2026-11-18T16:20:00Z"
+    },
+    {
+      "name": "kernel-metric-exporter",
+      "full_name": "bajajaarna4-bit/kernel-metric-exporter",
+      "html_url": "https://github.com/bajajaarna4-bit/kernel-metric-exporter",
+      "description": "High-throughput eBPF and sysfs system telemetry daemon in Python & C.",
+      "fork": false,
+      "stargazers_count": 19,
+      "forks_count": 3,
+      "open_issues_count": 0,
+      "language": "Python",
+      "updated_at": "2026-11-15T11:45:00Z"
+    },
+    {
+      "name": "distributed-kv-store",
+      "full_name": "bajajaarna4-bit/distributed-kv-store",
+      "html_url": "https://github.com/bajajaarna4-bit/distributed-kv-store",
+      "description": "Raft-consensus key-value store with continuous replication and WAL logging.",
+      "fork": false,
+      "stargazers_count": 31,
+      "forks_count": 7,
+      "open_issues_count": 2,
+      "language": "Go",
+      "updated_at": "2026-11-10T14:10:00Z"
+    },
+    {
+      "name": "glassmorphic-dashboard-ui",
+      "full_name": "bajajaarna4-bit/glassmorphic-dashboard-ui",
+      "html_url": "https://github.com/bajajaarna4-bit/glassmorphic-dashboard-ui",
+      "description": "Interactive 60fps dark space UI control panel with particle canvas and SVG gauges.",
+      "fork": false,
+      "stargazers_count": 29,
+      "forks_count": 4,
+      "open_issues_count": 0,
+      "language": "JavaScript",
+      "updated_at": "2026-11-05T08:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Productivity & System Monitoring Toolkit</title>
+  <meta name="description" content="A self-referential developer productivity, system telemetry, and automation toolkit featuring a futuristic glassmorphic control room UI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Cosmic Canvas & Floating Orbs -->
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="ambient-orbs" aria-hidden="true">
+    <div class="orb orb-cyan"></div>
+    <div class="orb orb-violet"></div>
+    <div class="orb orb-teal"></div>
+  </div>
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Floating Glass Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="glass-nav" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-glyph">⚡</span>
+        <span class="brand-text">DEV<span class="highlight">PORTFOLIO</span></span>
+      </a>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#system" class="nav-link">System Monitor</a></li>
+        <li><a href="#scripts" class="nav-link">Automation</a></li>
+        <li><a href="#github" class="nav-link">GitHub Stats</a></li>
+        <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+        <li><a href="#about" class="nav-link">Profile</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="status-indicator" title="Live Local & API Telemetry Active">
+          <span class="pulse-dot"></span>
+          <span class="status-text">60 FPS LIVE</span>
+        </div>
+        <a href="https://github.com/bajajaarna4-bit/developer-productivity-toolkit" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="badge-pill">
+          <span class="badge-sparkle">✦</span>
+          <span>CAPSTONE SHOWCASE & SYSTEM MONITOR</span>
+        </div>
+        <h1 class="hero-title">
+          Developer Productivity <br>
+          <span class="gradient-text">&amp; System Toolkit</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="typewriter-text" id="typewriter"></span>
+          <span class="caret"></span>
+        </p>
+        <div class="hero-cta-group">
+          <a href="#system" class="btn btn-primary">
+            <span>Explore Telemetry</span>
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#scripts" class="btn btn-secondary">
+            <span>Interactive Terminal</span>
+          </a>
+          <a href="https://github.com/bajajaarna4-bit/developer-productivity-toolkit" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+            <span>View Source Code</span>
+          </a>
+        </div>
+
+        <!-- Metric Summary Chips -->
+        <div class="hero-stats-chips">
+          <div class="chip">
+            <span class="chip-label">NODE STATUS</span>
+            <span class="chip-val green">OPTIMAL</span>
+          </div>
+          <div class="chip">
+            <span class="chip-label">UPTIME</span>
+            <span class="chip-val" id="hero-uptime">14d 3h 42m</span>
+          </div>
+          <div class="chip">
+            <span class="chip-label">PLATFORM</span>
+            <span class="chip-val" id="hero-platform">Linux x86_64</span>
+          </div>
+          <div class="chip">
+            <span class="chip-label">AUTOMATION SUITE</span>
+            <span class="chip-val cyan">6 Bash Scripts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: SYSTEM MONITOR -->
+    <section id="system" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 // TELEMETRY & DIAGNOSTICS</span>
+          <h2 class="section-title">System Resource <span class="gradient-text">Watchdog</span></h2>
+          <p class="section-desc">
+            Continuous real-time CPU, RAM, and storage utilization gauges powered by psutil and core kernel metrics.
+          </p>
+        </div>
+
+        <!-- Circular Gauges Grid -->
+        <div class="gauges-grid">
+          <!-- CPU Gauge Card -->
+          <div class="glass-card gauge-card tilt-target">
+            <div class="card-glow-top cyan"></div>
+            <div class="card-header-flex">
+              <span class="card-kicker">PROCESSOR ENGINE</span>
+              <span class="badge-status" id="cpu-status-badge">Normal</span>
+            </div>
+            <div class="gauge-container">
+              <svg class="gauge-svg" viewBox="0 0 160 160">
+                <circle class="gauge-bg" cx="80" cy="80" r="66" />
+                <circle class="gauge-fill" id="cpu-gauge-circle" cx="80" cy="80" r="66" />
+              </svg>
+              <div class="gauge-inner">
+                <span class="gauge-value" id="cpu-val">0</span><span class="gauge-unit">%</span>
+                <span class="gauge-name">CPU USAGE</span>
+              </div>
+            </div>
+            <div class="gauge-details">
+              <div class="detail-row">
+                <span>Logical Threads</span>
+                <strong id="cpu-cores">16 Cores</strong>
+              </div>
+              <div class="detail-row">
+                <span>Clock Speed</span>
+                <strong id="cpu-freq">3.20 GHz</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- RAM Gauge Card -->
+          <div class="glass-card gauge-card tilt-target">
+            <div class="card-glow-top violet"></div>
+            <div class="card-header-flex">
+              <span class="card-kicker">MEMORY ALLOCATION</span>
+              <span class="badge-status" id="ram-status-badge">Normal</span>
+            </div>
+            <div class="gauge-container">
+              <svg class="gauge-svg" viewBox="0 0 160 160">
+                <circle class="gauge-bg" cx="80" cy="80" r="66" />
+                <circle class="gauge-fill" id="ram-gauge-circle" cx="80" cy="80" r="66" />
+              </svg>
+              <div class="gauge-inner">
+                <span class="gauge-value" id="ram-val">0</span><span class="gauge-unit">%</span>
+                <span class="gauge-name">RAM USAGE</span>
+              </div>
+            </div>
+            <div class="gauge-details">
+              <div class="detail-row">
+                <span>Allocated Memory</span>
+                <strong id="ram-used">5.2 GB</strong>
+              </div>
+              <div class="detail-row">
+                <span>Total Installed</span>
+                <strong id="ram-total">15.9 GB</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disk Gauge Card -->
+          <div class="glass-card gauge-card tilt-target">
+            <div class="card-glow-top teal"></div>
+            <div class="card-header-flex">
+              <span class="card-kicker">ROOT STORAGE (/)</span>
+              <span class="badge-status" id="disk-status-badge">Normal</span>
+            </div>
+            <div class="gauge-container">
+              <svg class="gauge-svg" viewBox="0 0 160 160">
+                <circle class="gauge-bg" cx="80" cy="80" r="66" />
+                <circle class="gauge-fill" id="disk-gauge-circle" cx="80" cy="80" r="66" />
+              </svg>
+              <div class="gauge-inner">
+                <span class="gauge-value" id="disk-val">0</span><span class="gauge-unit">%</span>
+                <span class="gauge-name">DISK USAGE</span>
+              </div>
+            </div>
+            <div class="gauge-details">
+              <div class="detail-row">
+                <span>Free Headroom</span>
+                <strong id="disk-free">303 GB</strong>
+              </div>
+              <div class="detail-row">
+                <span>Capacity</span>
+                <strong id="disk-total">468 GB</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real-Time Telemetry Line Chart & System Matrix -->
+        <div class="telemetry-dashboard-row">
+          <!-- Chart Card -->
+          <div class="glass-card chart-card">
+            <div class="chart-header">
+              <div>
+                <h3 class="card-title">Live Resource Stream (Every 2s)</h3>
+                <span class="card-subtitle">Real-time CPU &amp; Memory dynamic spline chart</span>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item"><span class="legend-dot cyan"></span> CPU Load</span>
+                <span class="legend-item"><span class="legend-dot violet"></span> RAM Usage</span>
+              </div>
+            </div>
+            <div class="canvas-chart-wrapper">
+              <canvas id="telemetryChart" height="220"></canvas>
+            </div>
+          </div>
+
+          <!-- Quick Hardware Spec Matrix -->
+          <div class="glass-card specs-card">
+            <h3 class="card-title">Node Specification Matrix</h3>
+            <div class="specs-list">
+              <div class="spec-item">
+                <span class="spec-label">Hostname</span>
+                <span class="spec-val" id="spec-hostname">dev-workstation</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Operating System</span>
+                <span class="spec-val" id="spec-os">Ubuntu 24.04 LTS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Kernel</span>
+                <span class="spec-val" id="spec-kernel">6.8.0-40-generic</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Architecture</span>
+                <span class="spec-val" id="spec-arch">x86_64 (64-bit)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Network Throughput</span>
+                <span class="spec-val" id="spec-net">▲ 1.4 GB / ▼ 4.9 GB</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">System Uptime</span>
+                <span class="spec-val green" id="spec-uptime">14d 3h 42m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: AUTOMATION SCRIPTS -->
+    <section id="scripts" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 // BASH AUTOMATION PIPELINE</span>
+          <h2 class="section-title">Automated Shell <span class="gradient-text">Operations</span></h2>
+          <p class="section-desc">
+            Hardened Bash utilities featuring defensive error handling (<code>set -euo pipefail</code>), rotation algorithms, dry-run previews, and scheduled cron workflows.
+          </p>
+        </div>
+
+        <!-- Interactive Terminal Simulator -->
+        <div class="glass-card terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title-bar">
+              <svg class="term-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>devops@dev-workstation: ~/DeveloperPortfolio/ShellScripts</span>
+            </div>
+            <div class="terminal-actions">
+              <button class="term-btn" id="btn-replay-term" title="Replay script typing">▶ Run Again</button>
+              <button class="term-btn" id="btn-copy-term" title="Copy script command">📋 Copy</button>
+            </div>
+          </div>
+
+          <!-- Script Tabs -->
+          <div class="terminal-tabs" role="tablist">
+            <button class="term-tab active" data-script="system_info" role="tab">system_info.sh</button>
+            <button class="term-tab" data-script="resource_monitor" role="tab">resource_monitor.sh</button>
+            <button class="term-tab" data-script="backup" role="tab">backup.sh</button>
+            <button class="term-tab" data-script="cleanup" role="tab">cleanup.sh</button>
+            <button class="term-tab" data-script="git_auto_commit" role="tab">git_auto_commit.sh</button>
+            <button class="term-tab" data-script="menu" role="tab">menu.sh</button>
+          </div>
+
+          <!-- Terminal Output Screen -->
+          <div class="terminal-body" id="terminal-screen" aria-live="polite">
+            <div class="term-prompt-line">
+              <span class="term-user">devops@dev-workstation</span>:<span class="term-path">~/ShellScripts</span>$&nbsp;<span class="term-cmd" id="terminal-command">./system_info.sh</span>
+            </div>
+            <div class="term-output" id="terminal-text"></div>
+          </div>
+        </div>
+
+        <!-- Script Feature Cards Grid -->
+        <div class="scripts-grid">
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon cyan">⚡</div>
+            <h3 class="feature-title">system_info.sh</h3>
+            <p class="feature-text">Gathers complete CPU, RAM, disk, OS release, and uptime diagnostics. Supports <code>--json</code> flag for API serialization.</p>
+            <div class="feature-tag-row">
+              <span class="tag">CO2 Bash</span>
+              <span class="tag">ASCII UI</span>
+              <span class="tag">JSON Export</span>
+            </div>
+          </div>
+
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon red">🛡️</div>
+            <h3 class="feature-title">resource_monitor.sh</h3>
+            <p class="feature-text">Watchdog evaluating hardware thresholds (CPU &gt; 80%, RAM &gt; 85%, Disk &gt; 90%). Logs alerts to <code>logs/monitor.log</code>.</p>
+            <div class="feature-tag-row">
+              <span class="tag">Threshold Alert</span>
+              <span class="tag">Daemon Ready</span>
+              <span class="tag">ISO Logging</span>
+            </div>
+          </div>
+
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon violet">📦</div>
+            <h3 class="feature-title">backup.sh</h3>
+            <p class="feature-text">Generates timestamped <code>tar.gz</code> archives, verifies gzip checksums, and purges archives beyond a strict 5-backup retention limit.</p>
+            <div class="feature-tag-row">
+              <span class="tag">Compression</span>
+              <span class="tag">5-Backup Retention</span>
+              <span class="tag">Integrity Check</span>
+            </div>
+          </div>
+
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon green">🧹</div>
+            <h3 class="feature-title">cleanup.sh</h3>
+            <p class="feature-text">Safely purges temporary files (<code>*.tmp</code>, <code>*.bak</code>), Python bytecode, and deprecated logs. Features non-destructive <code>--dry-run</code>.</p>
+            <div class="feature-tag-row">
+              <span class="tag">--dry-run Mode</span>
+              <span class="tag">Cache Purge</span>
+              <span class="tag">Root-Protected</span>
+            </div>
+          </div>
+
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon teal">🚀</div>
+            <h3 class="feature-title">git_auto_commit.sh</h3>
+            <p class="feature-text">Verifies git status, automatically stages working tree changes, creates timestamped snapshot commits, and optionally pushes upstream.</p>
+            <div class="feature-tag-row">
+              <span class="tag">Git Automation</span>
+              <span class="tag">Timestamped</span>
+              <span class="tag">--push Flag</span>
+            </div>
+          </div>
+
+          <div class="glass-card script-feature-card tilt-target">
+            <div class="feature-icon yellow">🎛️</div>
+            <h3 class="feature-title">menu.sh</h3>
+            <p class="feature-text">Interactive ANSI-color text user interface uniting all automation scripts into an accessible numbered control launcher.</p>
+            <div class="feature-tag-row">
+              <span class="tag">Interactive TUI</span>
+              <span class="tag">Color Highlights</span>
+              <span class="tag">One-Click Run</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: GITHUB STATS -->
+    <section id="github" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 // REST API TELEMETRY</span>
+          <h2 class="section-title">GitHub Developer <span class="gradient-text">Activity</span></h2>
+          <p class="section-desc">
+            Dynamic repository metrics, star counts, and language distributions ingested directly via the GitHub REST API and Python pipelines.
+          </p>
+        </div>
+
+        <!-- Animated Counter Cards -->
+        <div class="github-stats-grid">
+          <div class="glass-card stat-counter-card tilt-target">
+            <div class="stat-icon-wrapper cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <div class="stat-meta">
+              <span class="counter-number" id="count-repos">0</span>
+              <span class="counter-label">Public Repositories</span>
+            </div>
+          </div>
+
+          <div class="glass-card stat-counter-card tilt-target">
+            <div class="stat-icon-wrapper yellow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div class="stat-meta">
+              <span class="counter-number" id="count-stars">0</span>
+              <span class="counter-label">Total Stars Earned (★)</span>
+            </div>
+          </div>
+
+          <div class="glass-card stat-counter-card tilt-target">
+            <div class="stat-icon-wrapper violet">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="stat-meta">
+              <span class="counter-number" id="count-followers">0</span>
+              <span class="counter-label">Followers</span>
+            </div>
+          </div>
+
+          <div class="glass-card stat-counter-card tilt-target">
+            <div class="stat-icon-wrapper green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"></path><path d="M12 12v3"></path></svg>
+            </div>
+            <div class="stat-meta">
+              <span class="counter-number" id="count-forks">0</span>
+              <span class="counter-label">Total Forks (⑂)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Languages Breakdown & Top Repos -->
+        <div class="github-details-row">
+          <!-- Language Bars Card -->
+          <div class="glass-card lang-card">
+            <h3 class="card-title">Top Languages &amp; Stack Distribution</h3>
+            <span class="card-subtitle">Calculated across public repositories</span>
+            <div class="language-bars-list" id="language-bars-container">
+              <!-- Dynamically populated or fallback rendered -->
+              <div class="lang-bar-item">
+                <div class="lang-info">
+                  <span class="lang-name">Shell / Bash</span>
+                  <span class="lang-pct">30.0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill shell" style="width: 30%"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-info">
+                  <span class="lang-name">Python</span>
+                  <span class="lang-pct">25.0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill python" style="width: 25%"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-info">
+                  <span class="lang-name">JavaScript / HTML5</span>
+                  <span class="lang-pct">20.0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill js" style="width: 20%"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-info">
+                  <span class="lang-name">HCL (Terraform)</span>
+                  <span class="lang-pct">15.0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill hcl" style="width: 15%"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-info">
+                  <span class="lang-name">Go</span>
+                  <span class="lang-pct">10.0%</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill go" style="width: 10%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Bio Card -->
+          <div class="glass-card profile-bio-card">
+            <div class="bio-avatar-wrapper">
+              <img id="github-avatar" src="https://avatars.githubusercontent.com/u/583231?v=4" alt="GitHub Profile Avatar" class="bio-avatar" />
+              <div class="bio-avatar-ring"></div>
+            </div>
+            <h3 class="bio-name" id="github-name">DevOps Engineer &amp; Full-Stack Architect</h3>
+            <span class="bio-handle" id="github-handle">@bajajaarna4-bit</span>
+            <p class="bio-desc" id="github-bio">Building resilient systems, developer tools, and high-performance applications with modern automation pipelines.</p>
+            <div class="bio-links">
+              <a id="github-profile-link" href="https://github.com/bajajaarna4-bit" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                <span>View GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Repos Grid -->
+        <h3 class="subheading-h3">Featured Repositories</h3>
+        <div class="repos-grid" id="repos-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: LEARNING ROADMAP TIMELINE -->
+    <section id="roadmap" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 // CURRICULUM MILESTONES</span>
+          <h2 class="section-title">Engineering <span class="gradient-text">Learning Roadmap</span></h2>
+          <p class="section-desc">
+            Structured course outcome journey mapping foundational Linux administration to cloud-native DevOps pipelines and full-stack software delivery.
+          </p>
+        </div>
+
+        <!-- Vertical Timeline with Drawing Line -->
+        <div class="timeline-wrapper">
+          <div class="timeline-line-track">
+            <div class="timeline-line-progress" id="timeline-progress"></div>
+          </div>
+
+          <!-- Phase 1 -->
+          <div class="timeline-item reveal-item">
+            <div class="timeline-dot completed">
+              <span>01</span>
+            </div>
+            <div class="timeline-content glass-card tilt-target">
+              <div class="timeline-meta">
+                <span class="badge-status-completed">Completed</span>
+                <span class="timeline-date">Phase 1 • CO1</span>
+              </div>
+              <h3 class="timeline-title">Linux Systems Administration &amp; Kernel Diagnostics</h3>
+              <p class="timeline-text">Mastered POSIX architecture, hardware topologies (<code>lscpu</code>), memory profiling (<code>free -h</code>), systemd journal auditing, and disk partition structures.</p>
+              <ul class="timeline-checklist">
+                <li><span class="check-icon">✓</span> Documented system profile with CPU, RAM, and NVMe mounts</li>
+                <li><span class="check-icon">✓</span> Compiled 11-command technical cheatsheet &amp; outputs</li>
+                <li><span class="check-icon">✓</span> Analyzed process memory hierarchies and load averages</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="timeline-item reveal-item">
+            <div class="timeline-dot completed">
+              <span>02</span>
+            </div>
+            <div class="timeline-content glass-card tilt-target">
+              <div class="timeline-meta">
+                <span class="badge-status-completed">Completed</span>
+                <span class="timeline-date">Phase 2 • CO2</span>
+              </div>
+              <h3 class="timeline-title">Bash Automation &amp; Production Scheduling</h3>
+              <p class="timeline-text">Engineered modular automation utilities with error handling (<code>set -euo pipefail</code>), automated tar.gz rotation, non-destructive cleanup, and an interactive TUI.</p>
+              <ul class="timeline-checklist">
+                <li><span class="check-icon">✓</span> Created resource watchdog script with customizable thresholds</li>
+                <li><span class="check-icon">✓</span> Implemented tar.gz backup with 5-archive retention policy</li>
+                <li><span class="check-icon">✓</span> Built interactive ANSI menu and documented cron jobs</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="timeline-item reveal-item">
+            <div class="timeline-dot completed">
+              <span>03</span>
+            </div>
+            <div class="timeline-content glass-card tilt-target">
+              <div class="timeline-meta">
+                <span class="badge-status-completed">Completed</span>
+                <span class="timeline-date">Phase 3 • CO3</span>
+              </div>
+              <h3 class="timeline-title">Python REST APIs &amp; Telemetry Serialization</h3>
+              <p class="timeline-text">Developed data pipelines integrating GitHub's REST API, rate-limit backoffs, psutil performance counters, and JSON payload export for dashboard visualization.</p>
+              <ul class="timeline-checklist">
+                <li><span class="check-icon">✓</span> Integrated GitHub REST API with bearer token hygiene</li>
+                <li><span class="check-icon">✓</span> Built psutil system telemetry service with cross-platform fallbacks</li>
+                <li><span class="check-icon">✓</span> Serialized metrics into standardized JSON schemas</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="timeline-item reveal-item">
+            <div class="timeline-dot in-progress">
+              <span>04</span>
+            </div>
+            <div class="timeline-content glass-card tilt-target">
+              <div class="timeline-meta">
+                <span class="badge-status-active">In Progress</span>
+                <span class="timeline-date">Phase 4 • CO4</span>
+              </div>
+              <h3 class="timeline-title">Full-Stack Showcase &amp; Glassmorphic UI</h3>
+              <p class="timeline-text">Created a 60fps dark futuristic control room dashboard featuring parallax canvas starfields, SVG gauges, dynamic spline charts, and animated terminal replay.</p>
+              <ul class="timeline-checklist">
+                <li><span class="check-icon">✓</span> Built zero-dependency responsive glassmorphic UI</li>
+                <li><span class="check-icon">✓</span> Interactive terminal line-by-line typing simulation</li>
+                <li><span class="check-icon">✓</span> Resilient client-side data fetch with demo fallbacks</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Phase 5 -->
+          <div class="timeline-item reveal-item">
+            <div class="timeline-dot upcoming">
+              <span>05</span>
+            </div>
+            <div class="timeline-content glass-card tilt-target">
+              <div class="timeline-meta">
+                <span class="badge-status-upcoming">Upcoming</span>
+                <span class="timeline-date">Phase 5 • Deployment</span>
+              </div>
+              <h3 class="timeline-title">Cloud Infrastructure, Containers &amp; GitOps</h3>
+              <p class="timeline-text">Containerizing services with Docker, provisioning infrastructure via Terraform/HCL, and deploying the self-referential portfolio to GitHub Pages and Cloudflare Pages.</p>
+              <ul class="timeline-checklist">
+                <li><span class="check-icon">○</span> Multi-stage Docker containerization for Python telemetry</li>
+                <li><span class="check-icon">○</span> GitHub Actions CI/CD automated linting &amp; test pipeline</li>
+                <li><span class="check-icon">○</span> Production deployment to GitHub Pages custom domain</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ABOUT & CONTACT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05 // PROFILE &amp; CONNECT</span>
+          <h2 class="section-title">Developer &amp; Engineer <span class="gradient-text">Portfolio</span></h2>
+          <p class="section-desc">
+            Bridging low-level systems engineering, cloud automation pipelines, and modern web interfaces.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card">
+            <h3 class="card-title">Core Competencies</h3>
+            <p class="about-text">
+              Passionate about systems architecture, infrastructure resilience, and developer velocity. Experienced with Linux kernel debugging, Bash shell automation, RESTful backend pipelines, and interactive web visualization.
+            </p>
+            <div class="tech-stack-pills">
+              <span class="tech-pill">Linux / POSIX</span>
+              <span class="tech-pill">Bash 5.x</span>
+              <span class="tech-pill">Python 3.12+</span>
+              <span class="tech-pill">REST APIs</span>
+              <span class="tech-pill">Git / GitHub CI</span>
+              <span class="tech-pill">psutil</span>
+              <span class="tech-pill">HTML5 Canvas</span>
+              <span class="tech-pill">Glassmorphism</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Systemd</span>
+            </div>
+          </div>
+
+          <div class="glass-card connect-card">
+            <h3 class="card-title">Connect &amp; Resources</h3>
+            <div class="contact-links-list">
+              <a href="https://github.com/bajajaarna4-bit" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+                <span class="link-label">GitHub</span>
+                <span class="link-val">github.com/bajajaarna4-bit ↗</span>
+              </a>
+              <a href="https://linkedin.com/in/aarna-bajaj" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+                <span class="link-label">LinkedIn</span>
+                <span class="link-val">linkedin.com/in/aarna-bajaj ↗</span>
+              </a>
+              <div class="contact-link-row" id="copy-email-row" role="button" tabindex="0">
+                <span class="link-label">Email</span>
+                <span class="link-val" id="email-text">bajajaarna4@gmail.com</span>
+              </div>
+              <a href="https://github.com/bajajaarna4-bit/developer-productivity-toolkit/blob/main/Portfolio/resume_template.md" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+                <span class="link-label">Resume</span>
+                <span class="link-val">View Curriculum Vitae (PDF) ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Glass Footer -->
+  <footer class="glass-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="brand-text">⚡ DEV<span class="highlight">PORTFOLIO</span></span>
+        <p class="footer-copy">Developer Productivity &amp; System Monitoring Toolkit • Capstone Project</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <span>Top</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

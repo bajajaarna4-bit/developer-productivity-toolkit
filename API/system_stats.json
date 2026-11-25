@@ -1,0 +1,76 @@
+{
+  "system": {
+    "hostname": "LAPTOP-SIRE72F2",
+    "os_name": "Windows",
+    "os_release": "11",
+    "architecture": "AMD64",
+    "processor": "AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD",
+    "python_version": "3.14.7"
+  },
+  "uptime": {
+    "seconds": 348873.0,
+    "formatted": "4d 0h 54m"
+  },
+  "cpu": {
+    "usage_percent": 3.0,
+    "per_core_percent": [
+      6.2,
+      23.5,
+      3.1,
+      0.0,
+      3.1,
+      0.0,
+      0.0,
+      0.0,
+      15.2,
+      11.8,
+      0.0,
+      0.0,
+      3.1,
+      6.1,
+      6.5,
+      3.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.9,
+      9.4,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "logical_cores": 32,
+    "physical_cores": 16,
+    "current_frequency_mhz": 2401.0
+  },
+  "memory": {
+    "total_gb": 15.21,
+    "used_gb": 11.37,
+    "available_gb": 3.84,
+    "usage_percent": 74.7,
+    "swap_total_gb": 4.0,
+    "swap_used_gb": 0.0,
+    "swap_percent": 0.0
+  },
+  "disk": {
+    "mount_point": "C:\\",
+    "total_gb": 288.9,
+    "used_gb": 131.9,
+    "free_gb": 157.0,
+    "usage_percent": 45.6
+  },
+  "network": {
+    "bytes_sent_mb": 141.76,
+    "bytes_recv_mb": 86.87
+  },
+  "timestamp": "2026-11-21T16:59:31Z",
+  "status": "HEALTHY"
+}

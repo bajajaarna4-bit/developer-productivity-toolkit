@@ -1,0 +1,11 @@
+total 48
+drwxr-xr-x 8 devops devops 4096 Nov 21 14:30 .
+drwxr-xr-x 4 devops devops 4096 Nov 21 10:15 ..
+drwxr-xr-x 8 devops devops 4096 Nov 21 14:30 .git
+-rw-r--r-- 1 devops devops  382 Nov 21 14:28 .gitignore
+drwxr-xr-x 2 devops devops 4096 Nov 21 14:25 API
+drwxr-xr-x 3 devops devops 4096 Nov 21 14:20 Linux
+drwxr-xr-x 3 devops devops 4096 Nov 21 14:26 Portfolio
+-rw-r--r-- 1 devops devops 9412 Nov 21 14:30 README.md
+drwxr-xr-x 2 devops devops 4096 Nov 21 14:27 Screenshots
+drwxr-xr-x 3 devops devops 4096 Nov 21 14:22 ShellScripts
